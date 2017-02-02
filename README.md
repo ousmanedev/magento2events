@@ -2,7 +2,8 @@
 
 This app allows you to browse and search all dispatched events in Magento 2. There exists a separate list for each magento 2 release (currently 2.0 and 2.1).
 
-https://magento2events.github.io
+https://ousmanedev.github.io/magento2events
+
 
 ## Use in local
 Requirements
@@ -10,7 +11,7 @@ Requirements
 - `wget`
 
 ```
- git clone https://magento.com/ousmanedev/magento2events
+ git clone https://github.com/ousmanedev/magento2events
  cd magento2events
  php build-events-database.php
  php -S localhost:5000
