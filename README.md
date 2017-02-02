@@ -4,6 +4,7 @@ This app allows you to browse and search all dispatched events in Magento 2. The
 
 https://ousmanedev.github.io/magento2events
 
+The web app contents are from an SQLite3 which is generated with this [PHP Script](https://github.com/ousmanedev/magento2events/blob/master/build-events-database.php)
 
 ## Use in local
 Requirements
