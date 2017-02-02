@@ -1,5 +1,8 @@
 # Magento 2 Events
-This app allows to you browse and search all dispatched events in Magento 2. There exists a separate list for each magento 2 major release (currently 2.0 and 2.1).
+
+This app allows you to browse and search all dispatched events in Magento 2. There exists a separate list for each magento 2 release (currently 2.0 and 2.1).
+
+https://magento2events.github.io
 
 ## Use in local
 Requirements
