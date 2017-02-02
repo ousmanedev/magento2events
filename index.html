@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lib/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/app.css">
+    <title>Magento 2 Events</title>
+  </head>
+  <body>
+    <a href="https://github.com/ousmanedev/magento2events"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+    <div id="magento2events">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="text-center"> Magento 2 Events</h1>
+        </div>
+      </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">All Events</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+              <li>
+                <form class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <select class="form-control" name="" v-model="eventFilter.version" v-on:change="getEvents">
+                      <option :value="version" v-for="version in versions">Magento {{version}}</option>
+                    </select>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <form class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <select class="form-control" v-model="eventFilter.module" v-on:change="getEvents">
+                      <option value="all">All Events</option>
+                      <option value="lib">Events in lib folder</option>
+                      <optgroup label="Modules Events">
+                        <option :value="module" v-for="module in modules">{{module}}</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="container">
+        <h2 class="page-header">
+          {{sectionTitle}}
+          <form class="pull-right">
+            <div class="form-group">
+              <input type="text" class="form-control" v-model="eventFilter.searchText" placeholder="Search by event_name">
+            </div>
+          </form>
+        </h2>
+        <ul class="list-group">
+          <a :href="event.githubUrl" target="_blank" class="list-group-item" v-for="event in foundEvents">
+            <h4 class="list-group-item-heading">{{event.name}}</h4>
+            <p class="list-group-item-text">{{event.location}}</p>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src='lib/js/sql.js/sql.js'></script>
+    <script type="text/javascript" src='lib/js/vue/vue.min.js'></script>
+    <script type="text/javascript" src='lib/js/app.js'></script>
+  </body>
+</html>
